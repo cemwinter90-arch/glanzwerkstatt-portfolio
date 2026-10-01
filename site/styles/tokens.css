@@ -1,0 +1,109 @@
+/* Self-hosted fonts: Archivo, Inter, IBM Plex Mono.
+   SIL Open Font License 1.1. Latin subset, woff2. */
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("../assets/fonts/archivo-400-800.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/ibm-plex-mono-400.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/ibm-plex-mono-500.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("../assets/fonts/inter-400-600.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Design tokens.
+   Contrast ratios below are WCAG 2.1, against the stated background. */
+
+:root {
+  /* ---- Surfaces ---- */
+  --void:      #050506;   /* page ground */
+  --surface:   #0B0B0E;   /* section alternation */
+  --elevated:  #121217;   /* panels */
+  --raised:    #17171E;   /* the one emphasised row (Comfort) */
+
+  /* ---- Ink ------------------------------------------------------ */
+  --chrome:    #F4F4F6;   /* headlines            — 18.4:1 on --surface */
+  --silver:    #A7A7B2;   /* body copy            —  8.25:1 on --surface */
+  --muted:     #8A8A96;   /* secondary text       —  5.2:1 on --raised, 6.0:1 on --void */
+
+  /* ---- Accent ----
+     --purple as small text on --void measures 4.16:1 and fails AA;
+     use --purple-light for text. */
+  --purple:       #B000FF;  /* hover fill, rules, marks */
+  --purple-deep:  #7300CC;  /* primary CTA fill — white on it = 8.07:1 */
+  --purple-light: #CBA6FF;  /* the ONLY purple safe as text — 10.1:1 on --void */
+
+  /* ---- Structure ---- */
+  --hairline:        rgba(244, 244, 246, 0.10);
+  --hairline-soft:   rgba(244, 244, 246, 0.06);
+  --hairline-strong: rgba(244, 244, 246, 0.20);
+
+  /* ---- Type ---- */
+  --ff-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --ff-body:    "Inter", "Helvetica Neue", Arial, sans-serif;
+  --ff-mono:    "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --fs-display: clamp(2.75rem, 1.55rem + 5.2vw, 5.75rem);
+  --fs-h2:      clamp(1.875rem, 1.25rem + 2.4vw, 3.25rem);
+  --fs-h3:      clamp(1.1875rem, 1.06rem + 0.6vw, 1.5rem);
+  --fs-price:   clamp(1.875rem, 1.3rem + 2.2vw, 2.875rem);
+  --fs-lead:    clamp(1.0625rem, 1rem + 0.4vw, 1.3125rem);
+  --fs-body:    1.0625rem;   /* 17px */
+  --fs-sm:      0.9375rem;   /* 15px */
+  --fs-label:   0.75rem;     /* 12px, mono, tracked +0.14em */
+
+  --lh-display: 0.96;
+  --lh-head:    1.08;
+  --lh-body:    1.62;
+
+  /* ---- Space: 4px base ---- */
+  --s1: 4px;   --s2: 8px;   --s3: 12px;  --s4: 16px;  --s5: 24px;
+  --s6: 32px;  --s7: 48px;  --s8: 64px;  --s9: 96px;  --s10: 128px;
+
+  --section-y: clamp(72px, 9vw, 144px);
+  --gutter:    clamp(20px, 5vw, 56px);
+  --maxw:      1180px;
+  --measure:   64ch;
+
+  /* ---- Radius ---- */
+  --r-sq:   0px;     /* frames, panels, images */
+  --r-sm:   2px;     /* buttons, inputs */
+
+  /* ---- Motion ---- */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur:  220ms;
+
+  /* ---- Brandmark: header logo is sized only through these tokens ---- */
+  --brandmark-h:  44px;   /* header wordmark, 272x44 */
+  --brandmark-maxw: 280px;
+}
+
+/* Reduced motion is honoured globally, not per-component. */
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur: 1ms; }
+}
